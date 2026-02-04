@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>منصة تعلم تحليل البيانات</title>
+
+<style>
+:root{
+  --navy-dark:#0d1b2a;
+  --navy:#1b263b;
+  --beige:#f5f1e8;
+  --white:#ffffff;
+  --text:#333;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+  background:var(--beige);
+  color:var(--text);
+}
+
+/* Containers */
+#header-container,
+#footer-container{
+  width:100%;
+}
+
+/* ===== HERO VIDEO ===== */
+.hero{
+  position:relative;
+  height:90vh;
+  min-height:520px;
+  overflow:hidden;
+}
+
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    110deg,
+    rgba(13,27,42,.9) 30%,
+    rgba(13,27,42,.55) 60%,
+    rgba(13,27,42,.25) 100%
+  );
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 20px;
+  color:var(--white);
+  text-align:center;
+}
+
+.hero-box{
+  max-width:800px;
+}
+
+.hero-box h1{
+  font-size:44px;
+  margin:0;
+}
+
+.hero-box p{
+  font-size:20px;
+  margin-top:22px;
+  line-height:1.9;
+  opacity:.95;
+}
+
+.hero-box .cta{
+  margin-top:42px;
+}
+
+.hero-box .cta a{
+  background:var(--beige);
+  color:var(--navy-dark);
+  padding:15px 40px;
+  border-radius:32px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+
+.hero-box .cta a:hover{
+  background:#fff;
+  transform:translateY(-3px);
+}
+
+/* ===== 3D COURSES SECTION ===== */
+.courses{
+  max-width:1200px;
+  margin:120px auto;
+  padding:0 20px;
+}
+
+.courses-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.courses-title h2{
+  font-size:32px;
+  color:var(--navy-dark);
+}
+
+.courses-title p{
+  font-size:18px;
+  margin-top:12px;
+  color:#555;
+}
+
+/* Cards Grid */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  perspective:1200px;
+}
+
+/* Card */
+.card{
+  background:linear-gradient(145deg,#ffffff,#f0f0f0);
+  border-radius:22px;
+  padding:45px 30px;
+  text-align:center;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.15),
+    inset 0 1px 0 rgba(255,255,255,.7);
+  transition:.4s;
+  transform-style:preserve-3d;
+}
+
+.card:hover{
+  transform:rotateY(-8deg) rotateX(6deg) translateY(-12px);
+  box-shadow:0 35px 70px rgba(0,0,0,.25);
+}
+
+/* Logo (3D Floating) */
+.card img{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  margin-bottom:25px;
+  transform:translateZ(40px);
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.25));
+}
+
+/* Title */
+.card h3{
+  font-size:24px;
+  color:var(--navy-dark);
+  margin-bottom:15px;
+  transform:translateZ(30px);
+}
+
+/* Text */
+.card p{
+  font-size:16px;
+  line-height:1.7;
+  color:#555;
+  transform:translateZ(20px);
+}
+
+/* Button */
+.card a{
+  display:inline-block;
+  margin-top:28px;
+  background:var(--navy-dark);
+  color:var(--white);
+  padding:12px 30px;
+  border-radius:26px;
+  text-decoration:none;
+  font-weight:700;
+  transform:translateZ(35px);
+  transition:.3s;
+}
+
+.card a:hover{
+  background:#000;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero-box h1{
+    font-size:32px;
+  }
+
+  .hero-box p{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="header-container"></div>
+
+<!-- Hero -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="media/vid1.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+    <div class="hero-box">
+      <h1>تعلم تحليل البيانات<br>بطريقة عملية واحترافية</h1>
+      <p>
+        منصة تعليمية تساعدك على تحليل البيانات
+        وإعداد التقارير الاحترافية وبناء قرارات مبنية على البيانات.
+      </p>
+      <div class="cta">
+        <a href="#">ابدأ رحلتك الآن</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3D Cards -->
+<section class="courses">
+  <div class="courses-title">
+    <h2>المسارات التعليمية</h2>
+    <p>اختر الأداة وابدأ رحلتك في عالم البيانات</p>
+  </div>
+
+  <div class="cards">
+
+    <!-- Excel (تم التعديل هنا فقط) -->
+    <div class="card">
+      <img src="media/picexcel.png" alt="Excel">
+      <h3>Excel</h3>
+      <p>
+        تعلم تحليل البيانات من الصفر
+        حتى التقارير الاحترافية والجداول المحورية.
+      </p>
+      <a href="excel.html">عرض المسار</a>
+    </div>
+
+    <!-- Python -->
+    <div class="card">
+      <img src="media/python.png" alt="Python">
+      <h3>Python</h3>
+      <p>
+        تحليل البيانات وأتمتة التقارير
+        باستخدام Python بطريقة عملية.
+      </p>
+    <a href="python.html">عرض المسار</a>
+
+    </div>
+
+    <!-- Power BI -->
+    <div class="card">
+      <img src="media/power-bi.webp" alt="Power BI">
+      <h3>Power BI</h3>
+      <p>
+        بناء لوحات تحكم تفاعلية
+        ومؤشرات أداء تدعم القرار.
+      </p>
+      <a href="powerbi.html">عرض المسار</a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header-container").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer-container").innerHTML = data);
+</script>
+
+</body>
+</html>
